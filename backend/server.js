@@ -12,7 +12,7 @@ const MONGO_URI = process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(MONGO_URI) //'mongodb://localhost:27017/ecommerce'
-  .then(() => console.log("MongoDB Connected"))
+  .then(() => console.log("MongoDB Connected Successfully"))
   .catch(err => console.log(err));
 
 const productSchema = new mongoose.Schema({
