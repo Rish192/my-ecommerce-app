@@ -20,8 +20,11 @@ const App = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://54.86.176.174:5000'
-        const response = await fetch(`${API_URL}/api/products`);
+        const response = await fetch('https://zmbby7byj5.execute-api.us-east-1.amazonaws.com/api/products')
+        
+        //const API_URL = import.meta.env.VITE_API_URL || 'http://54.86.176.174:5000'
+        //const response = await fetch(`${API_URL}/api/products`);
+        
         //const response = await fetch('http://localhost:5000/api/products');
         const data = await response.json();
         setProductList(data);
