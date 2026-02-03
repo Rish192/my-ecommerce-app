@@ -20,7 +20,9 @@ const App = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const API_URL = import.meta.env.VITE_API_URL || 'http://54.86.176.174:5000'
+        const response = await fetch(`${API_URL}/api/products`);
+        //const response = await fetch('http://localhost:5000/api/products');
         const data = await response.json();
         setProductList(data);
       } catch (error) {
@@ -108,7 +110,7 @@ const App = () => {
           fontSize: '3vw', textAlign: 'center', mb: '8vh', 
           borderBottom: '0.5vh solid crimson', width: '20vw', mx: 'auto', pb: '1vh' 
         }}>
-          Products
+          Product
         </Typography>
         <Box 
           sx={{ 
